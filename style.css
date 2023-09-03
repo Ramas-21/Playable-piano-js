@@ -43,6 +43,7 @@ header .column span{
 .keys-checkbox input{
     width: 60px;
     height: 30px;
+    outline: none;
     appearance: none;
     cursor: pointer;
     position: relative;
@@ -59,6 +60,11 @@ header .column span{
     position: absolute;
     background: #8c8c8c;
     transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+.keys-checkbox input:checked::before{
+    left: 35px;
+    background: #fff;
 }
 .piano-keys .key {
     list-style: none;
