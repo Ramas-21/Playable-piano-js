@@ -21,7 +21,8 @@ pianoKeys.forEach(key => {
 });
 
 const pressedKey = (e) => {
-    playTune(e.key);
+    // if the pressed key is in the allKeys array, only call the play tune function
+    if(allKeys.includes(e.key)) playTune(e.key);
 }
 
 document.addEventListener("keydown", pressedKey);
