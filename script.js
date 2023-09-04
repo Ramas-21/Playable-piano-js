@@ -1,6 +1,7 @@
 const pianoKeys = document.querySelectorAll(".piano-keys .key");
 
-let audio = new Audio("tunes/a.wav"); // by default, audio src is "a" tune
+let allKeys = [],
+audio = new Audio("tunes/a.wav"); // by default, audio src is "a" tune
 
 const playTune = (key) => {
     audio.src = `tunes/${key}.wav`; // passing audio src based on the key pressed
@@ -14,6 +15,7 @@ const playTune = (key) => {
 }
 
 pianoKeys.forEach(key => {
+    allKeys.push(key.dataset.key); // adding data-key value to the allKeys array
     // calling the playTune function with passing data-key value as an argument
     key.addEventListener("click", () => playTune(key.dataset.key));
 });
